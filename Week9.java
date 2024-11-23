@@ -24,6 +24,8 @@ public class Week9 {
         HashMap<Integer, Integer> freqNumber = new HashMap<>(); 
         for (int number: numbersList) {
             freqNumber.put(number, freqNumber.getOrDefault(number, 0) + 1);
+            // Lệnh bên trên tương đương với
+            // freqNumber.put(number, freqNumber.get(number) == null ? 1 : freqNumber.get(number) + 1);
         }
 
         // In cách 1:
