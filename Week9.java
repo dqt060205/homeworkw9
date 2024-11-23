@@ -45,8 +45,12 @@ public class Week9 {
                 if (freqNumber.get(key) >= i) {
                     System.out.print(key);
                 }
-                else{
-                    System.out.print(" ");
+                else{               // In dấu cách theo số lượng chữ số để khi in các số thẳng hàng
+                    int temp = key;
+                    while (temp > 0) {  
+                        temp /= 10;
+                        System.out.print(" ");
+                    }
                 }
                 System.out.print(" ");
             }
