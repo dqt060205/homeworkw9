@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Scanner;
+import java.util.TreeMap;
 //import Đỗ Quang Thịnh
 
 public class Week9 {
@@ -20,8 +20,8 @@ public class Week9 {
 
         Collections.sort(numbersList);  // Sử dụng hàm sort để xếp dãy tăng dần
 
-        // Sử dụng HashMap để lưu các giá trị kèm theo số lần xuất hiện của nó
-        HashMap<Integer, Integer> freqNumber = new HashMap<>(); 
+        // Sử dụng TreeMap để lưu các giá trị kèm theo số lần xuất hiện của nó
+        TreeMap<Integer, Integer> freqNumber = new TreeMap<>();
         for (int number: numbersList) {
             freqNumber.put(number, freqNumber.getOrDefault(number, 0) + 1);
             // Lệnh bên trên tương đương với
@@ -47,10 +47,15 @@ public class Week9 {
                 }
                 else{               // In dấu cách theo số lượng chữ số để khi in các số thẳng hàng
                     int temp = key;
-                    while (temp > 0) {  
+                    if (temp < 0) {
+                        temp = - temp;
+                        System.out.print(" ");
+                    }
+                    do {  
                         temp /= 10;
                         System.out.print(" ");
                     }
+                    while (temp > 0);
                 }
                 System.out.print(" ");
             }
